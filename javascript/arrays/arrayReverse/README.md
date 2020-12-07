@@ -9,4 +9,4 @@ Luckily, I have done this exact problem before on an Edabit code challenge so I 
 
 ## Solution
 Array Reverse Whiteboard
-![Array Reverse Whiteboard](../../assets/arrayReduce.jpg)
+![Array Reverse Whiteboard](../../../assets/arrayReduce.jpg)
