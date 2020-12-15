@@ -25,4 +25,4 @@ My teammates and I gave ourselves an hour to whiteboard. I believe the Big O for
 - `.insertAfter(value, newVal)` iterates over the linked list in search of a node with the value. If it finds the value, it adds the newVal after it. 
 
 ## Solution
-![whiteboard](javascript/linkedList/linkedList/assets/LL-insertions.png)
+![whiteboard](./assets/LL-insertions.png)
