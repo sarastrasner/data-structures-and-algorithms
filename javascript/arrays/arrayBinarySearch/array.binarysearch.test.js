@@ -8,6 +8,7 @@ describe('Testing if function can find the given numbers index', () => {
 
 
     }
-
-// did not get to finish writing my test 
-
+  },
+}
+)
+// did not get to finish writing my test
