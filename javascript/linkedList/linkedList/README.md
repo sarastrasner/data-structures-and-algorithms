@@ -29,3 +29,45 @@ I did test-driven development, so I wrote all my tests before writing code. All 
 - `append(value)` adds a value to the end of a linked list.
 - `includes(val)` which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list
 - `toString()` which takes in no arguments and returns a string representing all the values in the Linked List, formatted as: "{ a } -> { b } -> { c } -> NULL"
+
+
+# Singly Linked List
+a series of challenges based on singly linked lists
+
+## Challenge
+
+#### Features
+- `.append(value)` which adds a new node with the given value to the end of the list
+- `.insertBefore(value, newVal)` which add a new node with the given newValue immediately before the first value node
+- `.insertAfter(value, newVal)` which add a new node with the given newValue immediately after the first value node
+
+Write tests to prove the following functionality:
+1. Can successfully add a node to the end of the linked list
+1. Can successfully add multiple nodes to the end of a linked list
+1. Can successfully insert a node before a node located i the middle of a linked list
+1. Can successfully insert a node before the first node of a linked list
+1. Can successfully insert after a node in the middle of the linked list
+1. Can successfully insert a node after the last node of the linked list
+
+## Approach & Efficiency
+My teammates and I gave ourselves an hour to whiteboard. I believe the Big O for this approach is 0(n) since the linked list can be of an unknown size. 
+
+## API
+- `append(value)` finds the end of a linked list and appends the value to the end position.
+- `.insertBefore(value, newVal)` iterates over the linked list in search of a node with the value. If it finds the value, it adds the newVal before it. 
+- `.insertAfter(value, newVal)` iterates over the linked list in search of a node with the value. If it finds the value, it adds the newVal after it. 
+
+## Solution
+![whiteboard](./assets/LL-insertions.png)
+
+# Challenge Summary
+Return the k-th value from the end of a linked list.
+
+## Challenge Description
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Approach & Efficiency
+My partner and I whiteboarded for an hour, and came up with the solution below. We thought we should traverse the LL to calculate its length, then subtract K from that length, then traverse the LL to that position. Since we will be traversing the LL twice, the Big O is 0(n^2).
+
+## Solution
+![LL k-th value whiteboard](./assets/ll-kth-from-end.png)

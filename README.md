@@ -7,4 +7,3 @@
 
 - Linked Lists
   - [Singly Linked Lists](javascript/linkedList/linkedList/README.md)
-  - [Singly Linked Lists](javascript/linkedList/linkedList/README-II.md)
