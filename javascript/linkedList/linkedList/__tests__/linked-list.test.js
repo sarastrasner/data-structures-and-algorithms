@@ -64,7 +64,7 @@ describe('Linked List Code Challenge 5', () => {
 
 });
 
-describe('Linked List Code Challenge 7', () => {
+describe('Linked List Code Challenge 6', () => {
   it('Can successfully add a node to the end of the linked list', () => {
     const list = new LL();
     list.insert('apple');
@@ -98,22 +98,65 @@ describe('Linked List Code Challenge 7', () => {
     expect(list.toString()).toEqual('{ plum } -> { peach } -> { banana } -> { pineapple } -> NULL');
   });
 
-  // it('Can successfully insert a node before a node located in the middle of a linked list', () => {
-  //   const list = new LL();
-  //   list.insert('pineapple');
-  //   list.insert('peach');
-  //   list.insert('plum');
-  //   list.insertBefore('peach','banana');
-  //   expect(list.toString()).toEqual('{ plum } -> { banana } -> { peach } -> { pineapple } -> NULL');
-  // });
-
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    const list = new LL();
+    list.insert('pineapple');
+    list.insert('peach');
+    list.insert('plum');
+    list.insertBefore('peach','banana');
+    expect(list.toString()).toEqual('{ plum } -> { banana } -> { peach } -> { pineapple } -> NULL');
+  });
 
   it('Can successfully insert a node before the first node of a linked list', () => {
     const list = new LL();
     list.insert('peach');
+    list.insert('plum');
     list.insertBefore('peach','banana');
-    expect(list.toString()).toEqual('{ banana } -> { peach } -> NULL');
+    expect(list.toString()).toEqual('{ plum } -> { banana } -> { peach } -> NULL');
   });
 
 });
 
+describe('Linked List Code Challenge 7', () => {
+
+
+  it('returns an Exception Where k is greater than the length of the linked list', () => {
+    const list = new LL();
+    list.insert(1);
+    list.insert(2);
+    expect(list.kthFromEnd(5)).toEqual('Exception');
+  });
+
+  it('Where k and the length of the list are the same', () => {
+    const list = new LL();
+    list.insert(1);
+    list.insert(2);
+    expect(list.kthFromEnd(2)).toEqual(2);
+  });
+
+  it('Where k is not a positive integer', () => {
+    const list = new LL();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    expect(list.kthFromEnd(-1)).toEqual('Exception');
+  });
+
+  it('Where the linked list is of a size 1', () => {
+    const list = new LL();
+    list.insert(1);
+    expect(list.kthFromEnd(0)).toEqual(1);
+  });
+
+
+  it('Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    const list = new LL();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    expect(list.kthFromEnd(2)).toEqual(3);
+  });
+
+});
