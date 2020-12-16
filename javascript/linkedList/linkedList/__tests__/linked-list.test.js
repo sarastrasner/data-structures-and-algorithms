@@ -64,7 +64,7 @@ describe('Linked List Code Challenge 5', () => {
 
 });
 
-describe('Linked List Code Challenge 7', () => {
+describe('Linked List Code Challenge 6', () => {
   it('Can successfully add a node to the end of the linked list', () => {
     const list = new LL();
     list.insert('apple');
@@ -98,21 +98,21 @@ describe('Linked List Code Challenge 7', () => {
     expect(list.toString()).toEqual('{ plum } -> { peach } -> { banana } -> { pineapple } -> NULL');
   });
 
-  // it('Can successfully insert a node before a node located in the middle of a linked list', () => {
-  //   const list = new LL();
-  //   list.insert('pineapple');
-  //   list.insert('peach');
-  //   list.insert('plum');
-  //   list.insertBefore('peach','banana');
-  //   expect(list.toString()).toEqual('{ plum } -> { banana } -> { peach } -> { pineapple } -> NULL');
-  // });
-
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    const list = new LL();
+    list.insert('pineapple');
+    list.insert('peach');
+    list.insert('plum');
+    list.insertBefore('peach','banana');
+    expect(list.toString()).toEqual('{ plum } -> { banana } -> { peach } -> { pineapple } -> NULL');
+  });
 
   it('Can successfully insert a node before the first node of a linked list', () => {
     const list = new LL();
     list.insert('peach');
+    list.insert('plum');
     list.insertBefore('peach','banana');
-    expect(list.toString()).toEqual('{ banana } -> { peach } -> NULL');
+    expect(list.toString()).toEqual('{ plum } -> { banana } -> { peach } -> NULL');
   });
 
 });

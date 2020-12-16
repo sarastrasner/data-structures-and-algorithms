@@ -88,7 +88,7 @@ class LinkedList{
         currentNode = currentNode.next;
       } else {
         let newNode = new Node(newValue);
-        newNode.next = newNode;
+        newNode.next = currentNode.next;
         currentNode.next = newNode;
         break;
       }
