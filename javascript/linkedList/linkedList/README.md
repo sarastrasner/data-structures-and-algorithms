@@ -71,3 +71,15 @@ My partner and I whiteboarded for an hour, and came up with the solution below. 
 
 ## Solution
 ![LL k-th value whiteboard](./assets/ll-kth-from-end.png)
+
+# Challenge Summary
+Zip two linked lists.
+
+## Challenge Description
+Write a function called zipLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Approach & Efficiency
+My partner and I whiteboarded for an hour, and didn't get as far ad we'd hoped to. We were contemplatng how to integrate some of the other methods into our solution and ran out of time. 
+
+## Solution
+![LL k-th value whiteboard](./assets/LL-zip.png)
