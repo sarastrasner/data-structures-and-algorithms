@@ -4,92 +4,76 @@ const Node = require("./node");
 
 class LinkedList {
   constructor(value) {
-    this.value = value;
     this.head = null;
   }
 
   isEmpty() {
-    return this.head === null ? true : false;
+    return this.head === null;
   }
 
+  // Add a Node to the front of a linked list
   insert(value) {
-    //insert a node at the beginning of a given LL
-
-    if (this.isEmpty() === true) {
-      // the list is empty
-      // make a new Node with the value given
-      const node = new Node(value);
-      //   // assign this.head to that new node
-      this.head = node;
-    } else if (this.isEmpty() === false) {
-      // the list is NOT empty
-      // make a new Node with the value given
-      const node = new Node(value);
-      // make the new Node's .next point at the current head
-      node.next = this.head;
-      // reassign the head to the new node
-      this.head = node;
-    }
-  }
-  append(value) {
-    // add a value to the end of a linked list
     const node = new Node(value);
-    // traverse the entire list until I find the one whose next is null
+    if (this.isEmpty()) {
+      node.next = this.head;
+    }
 
+    this.head = node;
+  }
+
+  // Add a Node to the end of a linked list
+  append(value) {
     let currentNode = this.head;
     while (currentNode.next !== null) {
       currentNode = currentNode.next;
     }
-    // when I find that one, make the next my new node
-    currentNode.next = node;
-    // make my new node's next null - already done
+
+    currentNode.next = new Node(value);
   }
-  includes(val) {
-    // Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
+
+  // Search for a value within the list.
+  includes(value) {
     let currentNode = this.head;
-    // start at the head
     while (currentNode) {
-      // iterate through the whole list until you hit a return statement
-      if (currentNode.value === val) {
+      if (currentNode.value === value) {
         return true;
-        // if the current node contains the value, return true
-      } else if (!currentNode.value === val) {
-        currentNode = currentNode.next;
-        // if the current node DOES NOT contain the value, keep iterating
       }
+
+      // End of the list
       if (currentNode.next === null) {
         return false;
-        // if you reach the end of the linked list, return false
       }
+
+      currentNode = currentNode.next;
     }
   }
+
+  // Return a String representation of the Linked List, formatted as:
+  // "{ a } -> { b } -> { c } -> NULL"
   toString() {
-    // Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
-    // "{ a } -> { b } -> { c } -> NULL"
     let runningValue = "";
     let currentNode = this.head;
     while (currentNode) {
-      // iterate through the whole list
       runningValue += `{ ${currentNode.value} } -> `;
-      // add this vallue to the runningValue
       currentNode = currentNode.next;
-      // keep iterating
     }
-    runningValue += "NULL";
-    return runningValue;
+
+    return `${runningValue}NULL`;
   }
 
   insertBefore(value, newValue) {
     let currentNode = this.head;
     while (currentNode) {
-      if (currentNode.next.value !== value) {
+      if (currentNode.next.value === value) {
         currentNode = currentNode.next;
-      } else {
-        let newNode = new Node(newValue);
-        newNode.next = currentNode.next;
-        currentNode.next = newNode;
-        break;
+        return;
       }
+
+      const newNode = new Node(newValue);
+      newNode.next = currentNode.next;
+
+      currentNode.next = newNode;
+      break;
     }
   }
 
@@ -98,12 +82,14 @@ class LinkedList {
     while (current) {
       if (current.value !== value) {
         current = current.next;
-      } else {
-        let newNode = new Node(newValue);
-        newNode.next = current.next;
-        current.next = newNode;
-        break;
+        return;
       }
+
+      let newNode = new Node(newValue);
+      newNode.next = current.next;
+
+      current.next = newNode;
+      break;
     }
   }
 
