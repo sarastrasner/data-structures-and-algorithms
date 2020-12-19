@@ -132,6 +132,54 @@ class LinkedList{
   }
 }
 
+// Write a function called zipLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
-module.exports = LinkedList;
+//list1: head -> [1] -> [3] -> [2] -> X
+//list2: head -> [5] -> [9] -> [4] -> X
+//output: head -> [1] -> [5] -> [3] -> [9] -> [2] -> [4] -> X
 
+//list1: head -> [1] -> [3] -> X
+//list2: head -> [5] -> [9] -> [4] -> X
+//output: head -> [1] -> [5] -> [3] -> [9] -> [4] -> X
+
+function zipLists (list1,list2){
+  // This is list1: { apple } -> { banana } -> NULL
+  // This is list2: { peach } -> { pear } -> NULL
+  // WANT:  { apple } -> { peach } -> { banana } -> { pear } -> NULL'
+
+  let currentNode1 = list1.head;
+  let currentNode2 = list2.head;
+  currentNode1.next = currentNode2;
+  //This is list1: { apple } -> { peach } -> { pear } -> NULL
+  currentNode1 = currentNode1.next;
+  //This is currentNode1 & currentNode2: peach
+  //This is currentNode1.next: pear
+
+  //console.log(`This is currentNode2: ${currentNode2.value}`);
+
+  currentNode1.next = currentNode2;
+
+  //WANT:  { apple } -> { peach } -> { banana } -> { pear } -> NULL'
+
+
+  // let currentNode1 = list1.head;
+
+  // let currentNode2 = list2.head;
+  // let magicNumber = 1;
+  // while(currentNode1){
+  //   currentNode1 = currentNode1.next;
+  //   magicNumber ++;
+  // } if (magicNumber % 2 === 0){
+  //   currentNode1.next = currentNode2;
+  //   currentNode2.next = currentNode2;
+  // }
+  // console.log(`This is list1: ${list1}`);
+  // console.log(`This is list2: ${list2}`);
+  // return list1;
+}
+
+
+module.exports = {zipLists: zipLists, Node: Node, LinkedList: LinkedList};
+
+
+//module.exports = LinkedList;
