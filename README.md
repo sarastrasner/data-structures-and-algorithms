@@ -7,3 +7,6 @@
 
 - Linked Lists
   - [Singly Linked Lists](javascript/linkedList/linkedList/README.md)
+
+- Stacks and Queues
+  - [Singly Linked Lists](javascript/stacksAndQueues/README.md)
