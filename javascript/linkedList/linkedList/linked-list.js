@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const Node = require("./node");
+const Node = require('./node');
 
 class LinkedList {
   constructor(value) {
@@ -66,7 +66,7 @@ class LinkedList {
   toString() {
     // Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
     // "{ a } -> { b } -> { c } -> NULL"
-    let runningValue = "";
+    let runningValue = '';
     let currentNode = this.head;
     while (currentNode) {
       // iterate through the whole list
@@ -75,7 +75,7 @@ class LinkedList {
       currentNode = currentNode.next;
       // keep iterating
     }
-    runningValue += "NULL";
+    runningValue += 'NULL';
     return runningValue;
   }
 
@@ -109,7 +109,7 @@ class LinkedList {
 
   kthFromEnd(k) {
     if (k < 0) {
-      return "Exception";
+      return 'Exception';
     } else {
       let currentNode = this.head;
       let index = 0;
@@ -118,7 +118,7 @@ class LinkedList {
         currentNode = currentNode.next;
       }
       if (index < k) {
-        return "Exception";
+        return 'Exception';
       }
       let countdown = index - k - 1;
       currentNode = this.head;
