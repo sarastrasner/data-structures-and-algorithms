@@ -1,6 +1,6 @@
 'use strict';
 
-//let LL = require('../linked-list');
+//let obj.LL = require('../linked-list');
 let obj = require('../linked-list');
 
 
@@ -8,14 +8,14 @@ let obj = require('../linked-list');
 xdescribe('Linked List Code Challenge 5', () => {
   // Can properly insert into the linked list
   it('inserts a node at the beginning an an empty list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('Sara was here');
     expect(list.head.value).toEqual('Sara was here');
   });
 
   // The head property will properly point to the first node in the linked list
   it('the head property will properly point to the first node in the linked list', ()=> {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('unicorn');
     list.insert('narwhal');
     expect(list.head.value).toEqual('narwhal');
@@ -23,13 +23,13 @@ xdescribe('Linked List Code Challenge 5', () => {
 
   // Can successfully instantiate an empty linked list
   it('can successfully instantiate an empty linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     expect(list.head).toBeDefined;
   });
 
   // Can properly return a collection of all the values that exist in the linked list
   it('can properly return a collection of all the values that exist in the linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('unicorn');
     list.insert('narwhal');
     list.insert('elf');
@@ -38,7 +38,7 @@ xdescribe('Linked List Code Challenge 5', () => {
 
   // Can properly insert multiple nodes into the linked list
   it('can properly insert multiple nodes into the linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('apple');
     list.insert('banana');
     expect(list.includes('banana')).toStrictEqual(true);
@@ -46,21 +46,21 @@ xdescribe('Linked List Code Challenge 5', () => {
 
   // Will return true when finding a value within the linked list that exists
   it('will return true when finding a value within the linked list that exists', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('apple');
     expect(list.includes('apple')).toStrictEqual(true);
   });
 
   // Will return false when searching for a value in the linked list that does not exist
   it('will return false when searching for a value within the linked list that does not exist', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('apple');
     expect(list.includes('banana')).toStrictEqual(false);
   });
 
   // Will return false when searching for a value in the linked list that does not exist
   it('will return false when searching for a value within the linked list that does not exist', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('apple');
     expect(list.includes('banana')).toStrictEqual(false);
   });
@@ -69,14 +69,14 @@ xdescribe('Linked List Code Challenge 5', () => {
 
 xdescribe('Linked List Code Challenge 6', () => {
   it('Can successfully add a node to the end of the linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('apple');
     list.append('banana');
     expect(list.toString()).toEqual('{ apple } -> { banana } -> NULL');
   });
 
   it('Can successfully add multiple nodes to the end of the linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('pineapple');
     list.insert('peach');
     list.append('apple');
@@ -85,7 +85,7 @@ xdescribe('Linked List Code Challenge 6', () => {
   });
 
   it('Can successfully insert a node after the last node of a linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('pineapple');
     list.insert('peach');
     list.insertAfter('pineapple','banana');
@@ -93,7 +93,7 @@ xdescribe('Linked List Code Challenge 6', () => {
   });
 
   it('Can successfully insert a node after a node located in the middle of a linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('pineapple');
     list.insert('peach');
     list.insert('plum');
@@ -102,7 +102,7 @@ xdescribe('Linked List Code Challenge 6', () => {
   });
 
   it('Can successfully insert a node before a node located in the middle of a linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('pineapple');
     list.insert('peach');
     list.insert('plum');
@@ -111,7 +111,7 @@ xdescribe('Linked List Code Challenge 6', () => {
   });
 
   it('Can successfully insert a node before the first node of a linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert('peach');
     list.insert('plum');
     list.insertBefore('peach','banana');
@@ -121,24 +121,22 @@ xdescribe('Linked List Code Challenge 6', () => {
 });
 
 xdescribe('Linked List Code Challenge 7', () => {
-
-
   it('returns an Exception Where k is greater than the length of the linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert(1);
     list.insert(2);
     expect(list.kthFromEnd(5)).toEqual('Exception');
   });
 
   it('Where k and the length of the list are the same', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert(1);
     list.insert(2);
     expect(list.kthFromEnd(2)).toEqual(2);
   });
 
   it('Where k is not a positive integer', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert(1);
     list.insert(2);
     list.insert(3);
@@ -147,14 +145,14 @@ xdescribe('Linked List Code Challenge 7', () => {
   });
 
   it('Where the linked list is of a size 1', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert(1);
     expect(list.kthFromEnd(0)).toEqual(1);
   });
 
 
   it('Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
-    const list = new LL();
+    const list = new obj.LL();
     list.insert(1);
     list.insert(2);
     list.insert(3);
