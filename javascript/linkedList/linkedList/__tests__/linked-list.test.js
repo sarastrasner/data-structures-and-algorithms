@@ -170,7 +170,7 @@ describe('Zipping Linked Lists', () => {
     const list2 = new obj.LinkedList();
     list2.insert('peach');
     list2.append('pear');
-    expect(obj.zipLists(list1,list2)).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> NULL');
+    expect(obj.zipLists(list1,list2).toString()).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> NULL');
   });
 
   // “Happy Path” - Expected outcome
