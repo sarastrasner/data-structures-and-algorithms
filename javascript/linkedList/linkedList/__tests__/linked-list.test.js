@@ -173,10 +173,16 @@ describe('Zipping Linked Lists', () => {
     expect(obj.zipLists(list1,list2).toString()).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> NULL');
   });
 
-  // “Happy Path” - Expected outcome
-  // Expected failure
-  // Edge Case (if applicable/obvious)
-
+  it('Can successfully zip two linked lists of different length', () => {
+    const list1 = new obj.LinkedList();
+    list1.insert('apple');
+    list1.append('banana');
+    list1.append('orange');
+    const list2 = new obj.LinkedList();
+    list2.insert('peach');
+    list2.append('pear');
+    expect(obj.zipLists(list1,list2).toString()).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> { orange } -> NULL');
+  });
 
 
 });
