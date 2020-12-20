@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const Node = require("./node");
+const Node = require('./node');
 
 class LinkedList {
   constructor(value) {
@@ -59,6 +59,7 @@ class LinkedList {
     }
 
     return `${runningValue}NULL`;
+
   }
 
   insertBefore(value, newValue) {
@@ -95,7 +96,7 @@ class LinkedList {
 
   kthFromEnd(k) {
     if (k < 0) {
-      return "Exception";
+      return 'Exception';
     } else {
       let currentNode = this.head;
       let index = 0;
@@ -104,7 +105,7 @@ class LinkedList {
         currentNode = currentNode.next;
       }
       if (index < k) {
-        return "Exception";
+        return 'Exception';
       }
       let countdown = index - k - 1;
       currentNode = this.head;
