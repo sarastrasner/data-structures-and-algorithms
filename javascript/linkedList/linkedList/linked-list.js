@@ -134,11 +134,13 @@ function zipLists(list1, list2) {
   let listOneCurrentNode = list1.head;
   let listTwoCurrentNode = list2.head;
   while(listOneCurrentNode && listTwoCurrentNode){
-    let leftovers = listOneCurrentNode.next;
-    listOneCurrentNode.next = new Node(listTwoCurrentNode.value);
-    listOneCurrentNode.next.next = leftovers;
-    listOneCurrentNode = leftovers;
-    listTwoCurrentNode = listTwoCurrentNode.next;
+    let listOneLeftovers = listOneCurrentNode.next;
+    let listTwoLeftovers = listTwoCurrentNode.next;
+    listOneCurrentNode.next = listTwoCurrentNode;
+    listOneCurrentNode.next.next = listOneLeftovers;
+
+    listOneCurrentNode = listOneLeftovers;
+    listTwoCurrentNode = listTwoLeftovers;
   }
   if (listOneCurrentNode === null){
     listOneCurrentNode = listTwoCurrentNode;
@@ -146,6 +148,6 @@ function zipLists(list1, list2) {
   return list1;
 }
 
-module.exports = { zipLists: zipLists, Node: Node, LinkedList: LinkedList };
+module.exports = { zipLists, Node, LinkedList };
 
 //module.exports = LinkedList;
