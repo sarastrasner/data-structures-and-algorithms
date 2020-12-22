@@ -10,3 +10,4 @@
 
 - Stacks and Queues
   - [Singly Linked Lists](javascript/stacksAndQueues/README.md)
+  - [Queues with Stachs](javascript/stacksAndQueues/queueWithStacks/README.md)
