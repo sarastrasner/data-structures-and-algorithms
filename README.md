@@ -10,3 +10,5 @@
 
 - Stacks and Queues
   - [Singly Linked Lists](javascript/stacksAndQueues/README.md)
+
+- [Multi-Bracket Validation](javascript/multiBracketValidation/README.md)
