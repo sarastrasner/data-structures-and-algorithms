@@ -25,7 +25,8 @@ class PseudoQueue {
     }
   }
   dequeue() {
-    this.front.pop;
+    let frontValue = this.front.pop();
+    return frontValue;
   }
 }
 class Stack {
@@ -33,6 +34,22 @@ class Stack {
     this.top = null;
   }
 
+  push(value){
+    const node = new Node(value);
+    node.next = this.top;
+    this.top = node;
+  }
+
+  pop(){
+    let node = this.top;
+    this.top = node.next;
+    node.next = null;
+    return node.value;
+  }
+
+  peek() { return this.front === null ? 'Exception' : this.front.value; }
+
+  isEmpty() { return this.front === null; }
 }
 
 module.exports = { Node, Stack, PseudoQueue};
