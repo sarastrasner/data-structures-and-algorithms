@@ -10,5 +10,7 @@
 
 - Stacks and Queues
   - [Singly Linked Lists](javascript/stacksAndQueues/README.md)
+  - [Fifo Animal Shelter](javascript/stacksAndQueues/fifoAnimalShelter/README.md)
+  - [Queues with Stachs](javascript/stacksAndQueues/queueWithStacks/README.md)
 
 - [Multi-Bracket Validation](javascript/multiBracketValidation/README.md)
