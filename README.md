@@ -10,3 +10,7 @@
 
 - Stacks and Queues
   - [Singly Linked Lists](javascript/stacksAndQueues/README.md)
+
+
+- Trees
+  - [Binary Trees](javascript/tree/README.md)
