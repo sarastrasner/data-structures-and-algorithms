@@ -83,7 +83,7 @@ class BinarySearchTree extends BinaryTree{
     }
   }
 
-  search(root, value) {
+  contains(root, value) {
     if (root.value === value || root.left.contains(value) || root.right.contains(value)){
       return true;
     } else {

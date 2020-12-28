@@ -39,7 +39,7 @@ describe('Trees', () => {
   it('Can search for a value in a Binary Search Tree', () => {
     let nodes = new obj.Node(4, new obj.Node(5), new obj.Node(6));
     let tree = new obj.BinarySearchTree(nodes);
-    expect(tree.search(tree.root, 4)).toEqual(true);
+    expect(tree.contains(tree.root, 4)).toEqual(true);
   });
 
 });
