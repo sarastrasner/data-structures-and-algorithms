@@ -42,4 +42,18 @@ describe('Trees', () => {
     expect(tree.contains(tree.root, 4)).toEqual(true);
   });
 
+  it('should find the max value in a tree ', () => {
+    let tree = new obj.BinaryTree();
+    const Node1 = new obj.Node(1);
+    const Node2 = new obj.Node(19);
+    const Node3 = new obj.Node(38);
+    const Node4 = new obj.Node(22);
+    tree.root = Node1;
+    tree.root.left = Node2;
+    tree.root.right = Node3;
+    tree.root.right.left = Node4;
+    expect(tree.findMaximumValue()).toStrictEqual(38);
+  });
+
+
 });
