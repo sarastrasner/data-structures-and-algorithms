@@ -29,3 +29,15 @@ We whiteboarded for about 90 minutes and decided to use a depth-first traversal.
 
 ## Solution
 ![whiteboard](code-challenge16.png)
+
+# Code Challenge 17: 
+Breadth-first Traversal.
+
+## Challenge Description
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
+## Approach & Efficiency
+We whiteboarded for about 90 minutes and decided to use a depth-first traversal. Big O is O(n*h).
+
+## Solution
+![whiteboard](Breadth-first-Traversal.png)
