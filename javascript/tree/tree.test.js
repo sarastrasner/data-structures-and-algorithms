@@ -55,5 +55,29 @@ describe('Trees', () => {
     expect(tree.findMaximumValue()).toStrictEqual(38);
   });
 
+  it('performs a breadth-first traversal', () => {
+    let tree = new obj.BinaryTree();
+    const Two = new obj.Node(2);
+    const Seven = new obj.Node(7);
+    const Five = new obj.Node(5);
+    const Nine = new obj.Node(9);
+    const Four = new obj.Node(4);
+    const Two2 = new obj.Node(2);
+    const Six = new obj.Node(6);
+    const Five2 = new obj.Node(5);
+    const Eleven = new obj.Node(11);
+    tree.root = Two;
+    tree.root.left = Seven;
+    tree.root.left.left = Two2;
+    tree.root.left.right = Six;
+    tree.root.left.right.left = Five;
+    tree.root.left.right.right = Eleven;
+    tree.root.right = Five2;
+    //tree.root.right.right = Nine;
+    //tree.root.right.right.left = Four;
+    // expect(tree.breadthFirst(28)).toStrictEqual([2,7,5,2,6,9,5,11,4]);
+    expect(tree.breadthFirst(28)).toStrictEqual([2,7,5,2,6,5,11]);
+  });
+
 
 });
