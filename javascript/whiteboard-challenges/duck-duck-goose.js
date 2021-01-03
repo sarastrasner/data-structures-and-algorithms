@@ -1,0 +1,2 @@
+// Write a function called DuckDuckGoose() that accepts a list of strings and an int k. Start at the beginning of the list and count up to k and remove the person at that index from the list. Keep counting from that index and count up to k over and over until only one person is left in the list. Return a string with the name of the last person left in the list.
+//https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-14/interview-02.html
