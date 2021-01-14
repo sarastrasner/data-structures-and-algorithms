@@ -19,3 +19,6 @@ Multi-Bracket Validation
 - Trees
   - [Binary Trees](javascript/tree/README.md)
   - [FizzBuzzTree](javascript/fizzBuzzTree/README.md)
+
+Insertion Sort
+- [Insertion Sort](javascript/insertionSort/README.md)
