@@ -22,3 +22,6 @@ Multi-Bracket Validation
 
 Insertion Sort
 - [Insertion Sort](javascript/insertionSort/README.md)
+
+- HashMaps
+  - [Hashmaps](javascript/hashtable/README.md)

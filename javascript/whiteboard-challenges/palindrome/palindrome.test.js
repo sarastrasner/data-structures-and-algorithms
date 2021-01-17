@@ -15,18 +15,18 @@ describe('Palindrome checker', () => {
 
   it('returns true for a palindrome linked list', () => {
     const list = new ll.LinkedList();
-    list.append(1);
-    list.append(2);
-    list.append(1);
+    list.insert(1);
+    list.insert(2);
+    list.insert(1);
     expect(palindrome(list)).toBe(true);
   });
 
   it('returns true for a palindrome linked list', () => {
     const list = new ll.LinkedList();
-    list.append(1);
-    list.append(2);
-    list.append(2);
-    list.append(1);
+    list.insert(1);
+    list.insert(2);
+    list.insert(2);
+    list.insert(1);
     expect(palindrome(list)).toBe(true);
   });
 });
