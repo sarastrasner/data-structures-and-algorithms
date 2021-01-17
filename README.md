@@ -7,3 +7,6 @@
 
 - Linked Lists
   - [Singly Linked Lists](javascript/linkedList/linkedList/README.md)
+
+- HashMaps
+  - [Hashmaps](javascript/hashtable/README.md)
