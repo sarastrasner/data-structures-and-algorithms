@@ -1,6 +1,5 @@
 'use strict';
 const repeatedWord = require('./repeatedWord');
-const obj = require('../hashtable/hashtable');
 
 
 describe('repeat word hash map', () => {

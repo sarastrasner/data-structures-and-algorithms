@@ -5,7 +5,7 @@ Find the first repeated word in a book.
 Write a function that accepts a lengthy string parameter. Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Big O for Time is O(n), Space is O(n)
 
 ## Solution
 ![Solution](./CC-31.png)
