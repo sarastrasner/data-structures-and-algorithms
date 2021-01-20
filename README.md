@@ -10,3 +10,5 @@
 
 - HashMaps
   - [Hashmaps](javascript/hashtable/README.md)
+  - [repeatedWord](javascript/repeatedWord/README.md)
+  - [treeIntersection](javascript/treeIntersection/README.md)

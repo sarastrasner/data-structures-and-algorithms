@@ -51,26 +51,57 @@ class HashMap {
     // 1. get my hash
     const hash = this.hash(key);
     // 2. make value entry
-    const entry = {[key]: value};
+    const entry = { [key]: value };
 
     // 3. set the entry to the hash value in the map
     // 3.1 check to see if there is a hash there already - if not, I need to put in a LL
-    if( !this.map[hash] ){ this.map[hash] = new LinkedList(); }
+    if (!this.map[hash]) {
+      this.map[hash] = new LinkedList();
+    }
 
     // 3.2 add the entry
-    this.map[hash].add( entry );
+    this.map[hash].add(entry);
   }
 
   // get: takes in the key and returns the value from the table.
   get(key) {
-    let index = this.hash(key);
-    if (this.map[index]) return this.map[index];
-    //if (this.map[index].get(key)) return this.map[index].get(key);
-    else return null;
+    // first, I need to hash the key
+    const hash = this.hash(key);
+    // if there isn't a hash return null
+    if (!this.map[hash]) return null;
+
+    // make my hashed position (which is a linked list) equal to current
+    let current = this.map[hash].head;
+    // while current exists
+    while (current) {
+      if (current.value.hasOwnProperty(key)) {
+        return current.value[key];
+      }
+      current = current.next;
+    }
+
+    return null;
+    // look to see if the keys match
+    // if they do, return the value
   }
+
   // contains: takes in the key and returns a boolean, indicating if the key exists in the table already.
   contains(key) {
-    return this.hashMap.has(key);
+    const hash = this.hash(key);
+    // if there isn't a hash return null
+    if (!this.map[hash]) return null;
+
+    // make my hashed position (which is a linked list) equal to current
+    let current = this.map[hash].head;
+    // while current exists
+    while (current) {
+      if (current.value.hasOwnProperty(key)) return true;
+      current = current.next;
+    }
+
+    return false;
+    // look to see if the keys match
+    // if they do, return the value
   }
 }
 
