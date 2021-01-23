@@ -130,7 +130,7 @@ class LinkedList {
 function zipLists(list1, list2) {
   let listOneCurrentNode = list1.head;
   let listTwoCurrentNode = list2.head;
-  while(listOneCurrentNode && listTwoCurrentNode){
+  while (listOneCurrentNode && listTwoCurrentNode) {
     let listOneLeftovers = listOneCurrentNode.next;
     let listTwoLeftovers = listTwoCurrentNode.next;
     listOneCurrentNode.next = listTwoCurrentNode;
@@ -139,12 +139,23 @@ function zipLists(list1, list2) {
     listOneCurrentNode = listOneLeftovers;
     listTwoCurrentNode = listTwoLeftovers;
   }
-  if (listOneCurrentNode === null){
+  if (listOneCurrentNode === null) {
     listOneCurrentNode = listTwoCurrentNode;
   }
   return list1;
 }
 
-module.exports = { zipLists, Node, LinkedList };
+function findMinValue(ll) {
+  if (!ll.head) throw new Error('invalid LL');
+  let current = ll.head;
+  let minimumValue = current.value;
+  while (current) {
+    if (minimumValue > current.value) minimumValue = current.value;
+    current = current.next;
+  }
+  return minimumValue;
+}
+
+module.exports = { findMinValue, zipLists, Node, LinkedList };
 
 //module.exports = LinkedList;

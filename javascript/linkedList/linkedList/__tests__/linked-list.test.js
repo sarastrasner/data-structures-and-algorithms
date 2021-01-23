@@ -172,17 +172,15 @@ describe('Zipping Linked Lists', () => {
     list2.append('pear');
     expect(obj.zipLists(list1,list2).toString()).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> NULL');
   });
+});
 
-  it('Can successfully zip two linked lists of different length', () => {
+describe('Finding minimum value', () => {
+  it('Can find the minimum value', () => {
     const list1 = new obj.LinkedList();
-    list1.insert('apple');
-    list1.append('banana');
-    list1.append('orange');
-    const list2 = new obj.LinkedList();
-    list2.insert('peach');
-    list2.append('pear');
-    expect(obj.zipLists(list1,list2).toString()).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> { orange } -> NULL');
+    list1.insert(7);
+    list1.insert(4);
+    list1.insert(2);
+    list1.insert(8);
+    expect(obj.findMinValue(list1)).toEqual(2);
   });
-
-
 });
