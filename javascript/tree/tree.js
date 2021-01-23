@@ -120,5 +120,16 @@ class BinarySearchTree extends BinaryTree{
   }
 }
 
+function validateBinarySearchTree(tree) {
+  if (!tree.root) throw new Error('Cannot validate an empty tree');
+  const validateBst = (root, minValue, maxValue) => {
+    if(root === null) return true;
+    if(root.value >= maxValue || root.value <= minValue) return false;
+    return validateBst(root.right, root.value, maxValue) &&
+            validateBst(root.left, minValue, root.value);
+  };
+  return validateBst(tree.root, -Infinity, Infinity);
+}
 
-module.exports = {Node, BinaryTree, BinarySearchTree};
+
+module.exports = {Node, BinaryTree, BinarySearchTree, validateBinarySearchTree};
