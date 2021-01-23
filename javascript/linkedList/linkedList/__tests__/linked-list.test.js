@@ -170,13 +170,17 @@ describe('Zipping Linked Lists', () => {
     const list2 = new obj.LinkedList();
     list2.insert('peach');
     list2.append('pear');
-    expect(obj.zipLists(list1,list2)).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> NULL');
+    expect(obj.zipLists(list1,list2).toString()).toEqual('{ apple } -> { peach } -> { banana } -> { pear } -> NULL');
   });
+});
 
-  // “Happy Path” - Expected outcome
-  // Expected failure
-  // Edge Case (if applicable/obvious)
-
-
-
+describe('Finding minimum value', () => {
+  it('Can find the minimum value', () => {
+    const list1 = new obj.LinkedList();
+    list1.insert(7);
+    list1.insert(4);
+    list1.insert(2);
+    list1.insert(8);
+    expect(obj.findMinValue(list1)).toEqual(2);
+  });
 });
