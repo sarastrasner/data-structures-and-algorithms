@@ -3,8 +3,6 @@
 //let obj.LL = require('../linked-list');
 let obj = require('../linked-list');
 
-
-
 xdescribe('Linked List Code Challenge 5', () => {
   // Can properly insert into the linked list
   it('inserts a node at the beginning an an empty list', () => {
