@@ -75,28 +75,43 @@ function partitionLL(linkedList, partition) {
 // output: 2-> 1-> 9 -> | That is 912.
 
 function sumLists(ll1, ll2) {
-  if (!ll1.head || ll2.head)
+  if (!ll1.head || !ll2.head)
     throw new Error('Error: one or more invalid linked lists');
   let current1 = ll1.head;
   let current2 = ll2.head;
   let newLL = new LinkedList();
   let newLLCurrent = newLL.head;
-  while (current1 !== null && current2 !== null) {
-    if (current1.next !==null && current2.next !== null) {
+  while (current1 !== null || current2 !== null) {
+    console.log(newLLCurrent);
+    if (current1 !== null && current2 !== null) {
       newLLCurrent.value = current1.value + current2.value;
-      current1 = current1.next;
-      current2 = current2.next;
-    }
-    else if (current1.next !== null) {
+      if (current2.next !== null) current2 = current2.next;
+      if (current1.next !== null) current1 = current1.next;
+    } else if (current1.next !== null) {
       newLLCurrent.value = current1.value;
       current1 = current1.next;
-    }
-    else if (current2.next !== null) {
+    } else if (current2.next !== null) {
       newLLCurrent.value = current2.value;
       current2 = current2.next;
     }
   }
   return newLLCurrent;
+}
+
+function sumLinkedLists(node1, node2, carry = 0) {
+  if (!node1 && !node2 && carry === 0) {
+    return null;
+  }
+  let value = carry;
+  value += node1 ? node1.value : 0;
+  value += node2 ? node2.value : 0;
+  const node = new LinkedList(value % 10);
+  node.next = sumLinkedLists(
+    node1 ? node1.next : null,
+    node2 ? node2.next : null,
+    value > 10 ? 1 : 0
+  );
+  return node;
 }
 
 //PALINDROME: Implement a function to check if a linked list is a palindrom
@@ -114,11 +129,25 @@ function palindrome(ll) {
   return true;
 }
 
+function printList(head) {
+  while (head !== null) {
+    head = head.next;
+  }
+}
+
+function CreateLL (value) {
+  this.value = value;
+  this.next = null;
+}
+
 module.exports = {
+  CreateLL,
   removeDuplicates,
   kthFromEnd,
   deleteMiddleNote,
   partitionLL,
   palindrome,
-  sumLists
+  sumLinkedLists,
+  sumLists,
+  printList,
 };
