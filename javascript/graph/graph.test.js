@@ -64,3 +64,14 @@ describe('Testing Graph Class', () => {
 
 
 });
+
+
+describe('Testing Depth first traversal', () => {
+  it('A depth first traversal returns a list of all the nodes', () => {
+    let graph = new obj.Graph();
+    graph.addVertex(4);
+    graph.addVertex(6);
+    graph.addDirectedEdge(4,6,2);
+    expect(graph.depthFirstTraversal(4)).toContain(4, 6 );
+  });
+});
