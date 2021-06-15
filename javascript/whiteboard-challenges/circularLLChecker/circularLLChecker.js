@@ -9,4 +9,4 @@ function circularLLChecker (linkedList){
   return false;
 }
 
-module.exports = circularLLChecker; 
+module.exports = circularLLChecker;
