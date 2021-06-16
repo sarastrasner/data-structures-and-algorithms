@@ -16,3 +16,4 @@ describe('Shuffle the array', () => {
     expect(shuffle(array, length)).toEqual([1,2,1,2]);
   });
 });
+
